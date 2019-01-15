@@ -1,5 +1,5 @@
 {
-  "name": "webpack",
+  "name": "my-web-pack",
   "version": "1.0.0",
   "description": "project webpack",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/leforyou/webpack/issues"
   },
-  "homepage": "https://github.com/leforyou/webpack#readme"
+  "homepage": "https://github.com/leforyou/webpack#readme",
+  "devDependencies": {
+    "webpack": "^4.28.4"
+  }
 }
