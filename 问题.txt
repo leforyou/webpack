@@ -1,0 +1,7 @@
+webpac配置多个服务器地址
+
+
+端口问题  
+
+
+publicPath:'/public/',//静态文件
