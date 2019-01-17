@@ -1,4 +1,6 @@
 import "./index.scss";
 import './index.js';
-const a = 22222;
-document.body.innerHTML += a;
+const aaa = 'webpack打包';
+
+
+document.body.innerHTML += aaa;

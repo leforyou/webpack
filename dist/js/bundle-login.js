@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/page/index/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/page/login/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/page/index/index.js":
+/***/ "./src/page/login/index.js":
 /*!*********************************!*\
-  !*** ./src/page/index/index.js ***!
+  !*** ./src/page/login/index.js ***!
   \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("//import \"./index.scss\";\nvar a = 22222;\ndocument.body.innerHTML += a;\n\n//# sourceURL=webpack:///./src/page/index/index.js?");
+eval("var b = 666666;\n\n//# sourceURL=webpack:///./src/page/login/index.js?");
 
 /***/ })
 
