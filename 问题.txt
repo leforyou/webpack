@@ -1,7 +1,10 @@
-webpac配置多个服务器地址
+webpac配置多个服务器地址：局域网/本地地址
 
 
-端口问题  
+引用的图片路径必须是../img/1.png  
 
 
 publicPath:'/public/',//静态文件
+
+
+webpack 多页面的css合并
