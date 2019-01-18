@@ -1,6 +1,8 @@
+//导入css
 import "../../assets/css/api.css";
 import "../../assets/css/common.scss";
-import "./index.scss";
+import "../../assets/css/style.scss";
+
 const aaa = 'webpack打包';
 
 

@@ -4,6 +4,9 @@ webpac配置多个服务器地址：局域网/本地地址
 引用的图片路径必须是../img/1.png  
 
 
+还没配置css3前辍
+
+
 publicPath:'/public/',//静态文件
 
 

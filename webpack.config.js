@@ -109,10 +109,12 @@ module.exports = {
         ]
     },
     plugins: [
-        /*new ExtractTextPlugin("css/styles.css"),*/
-        new ExtractTextPlugin({
+        new ExtractTextPlugin("css/style.css"),/**/
+        /*new ExtractTextPlugin("css/[name].css"),*/
+        /*new ExtractTextPlugin({
             filename: 'css/[name].[hash:8].min.css',
-        }),
+            allChunks: true // 一开始所有css都打包
+        }),*/
         //清空打包目录dist
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname), //根目录
@@ -135,11 +137,11 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             template:`src/page/index/index.html`,
-            filename:`html/index.html`,
-            inject:true,
+            filename:`html/index.html`,// 生成文件名字
+            // inject: false,    // 不把生成的css，js插入到html中
             hash:false,
             chunks:["index"],
-            minify: {
+            minify: {// 压缩html
                 removeComments: true,
                 collapseWhitespace: true,
                 removeAttributeQuotes: true
@@ -148,11 +150,11 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template:`src/page/login/index.html`,
-            filename:`html/login.html`,
-            inject:true,
+            filename:`html/login.html`,// 生成文件名字
+            // inject: false,    // 不把生成的css，js插入到html中
             hash:false,
             chunks:["login"],
-            minify: {
+            minify: {// 压缩html
                 removeComments: true,
                 collapseWhitespace: true,
                 removeAttributeQuotes: true
