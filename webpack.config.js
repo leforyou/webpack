@@ -45,7 +45,9 @@ module.exports = {
         hot: true // 开启热更新(热加载)
     },*/
     devServer:{
-        contentBase:path.resolve(__dirname,"src/page/index/"), //最好设置成绝对路径（启动服务器访问的页面）
+        //webpack-dev-server：会实时打包，但是并不会在本地硬盘生成dist目录文件，这是因为webpack-dev-server将打包好的文件放在了内存中（依旧是可以访问的），运行npm run build才会本地生成dist文件目录
+        contentBase:path.resolve(__dirname,"dist/"), //最好设置成绝对路径（启动服务器访问的页面）
+        publicPath:'/',
         historyApiFallback: false,
         hot: true,
         inline: true,
@@ -57,6 +59,28 @@ module.exports = {
     },
     module:{
         rules: [
+            {
+                test: /\.(css|scss|sass)$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            },
+            /*{
+                test: /\.scss$/,
+                use: [
+                  {
+                    loader: "style-loader" // 将 JS 字符串生成为 style 节点
+                  },
+                  {
+                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+                  },
+                  {
+                    loader: "sass-loader" // 将 Sass 编译成 CSS
+                  }
+                ]
+            },*/
             {
                 test: /\.(png|jpg|gif)$/i,
                 use: [
@@ -77,15 +101,8 @@ module.exports = {
                     presets: ['@babel/preset-env']
                     }
                 }
-            },
-            {
-                test: /\.(css|scss|sass)$/,
-                use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                ]
-            }/**/
+            }
+            /**/
         ]
     },
     plugins: [
