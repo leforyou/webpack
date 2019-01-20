@@ -9,6 +9,7 @@
  *
  *3.在webpack.config.js中配置【postcss-loader】
  *4.在postcss.config.js中导出如下内容
+ *5."postcss-loader" 必须在 "sass-loader"或"less-loader"的前面(上面),loader的解析是由下而上的，必须等sass/less转换成css才能使用postcss-loader
  * 
  * browserslist配置请参考【https://www.npmjs.com/package/browserslist】  &&  【https://github.com/browserslist/browserslist】
  * 
