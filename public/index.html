@@ -7,16 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="icon" href="../img/favicon.ico" type="image/ico">
-    <script>
-        /*这种导入方式是错误的，原因webpack打包的文件入口是js文件
-        import "./index.scss";
-        import './index.js';*/
-    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="login-page">
-        注册
+    <div class="all-page">
+        <!--全部页面-->
+        <a href="html/index.html">index</a>
+        <a href="html/login.html">login</a>
     </div>
 </body>
 
