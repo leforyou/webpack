@@ -35,7 +35,7 @@ module.exports = {
     },*/
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: 'js/bundle-[name].js', //例如：index.js将打包成bundle-index.js。还有其它写法"[name].js"。
+        filename: 'js/bundle-[name]-[hash:8].js', //例如：index.js将打包成bundle-index-e82423c7.js。还有其它写法"[name].js"。
     },
     devServer: {
         //webpack-dev-server：会实时打包，但是并不会在本地硬盘生成dist目录文件，这是因为webpack-dev-server将打包好的文件放在了内存中（依旧是可以访问的），运行npm run build才会本地生成dist文件目录
@@ -77,7 +77,7 @@ module.exports = {
                 // 此处为分离css的写法
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader", "postcss-loader", "sass-loader"],
+                    use: ["css-loader", "postcss-loader", "sass-loader"],//利用postcss-loader自动添加css前缀
                     /*use: ["css-loader", {//给css添加前辍的方式
                         loader: "postcss-loader",
                         options: {
@@ -138,7 +138,7 @@ module.exports = {
             // Default: false - remove files
             dry: false,
         }),
-        /*所有样式打包在style.css文件内*/
+        /*所有样式打包在style.css文件内。Vue2.*+Element-ui也是将所有css打包在同一个app.css文件(203KB)*/
         new ExtractTextPlugin("css/style.[hash:8].min.css"),
         /*new ExtractTextPlugin("css/[name].css"),*/
         /*new ExtractTextPlugin({
