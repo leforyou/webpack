@@ -61,7 +61,7 @@ module.exports = {
                     fallback: "style-loader",
                     use: ["css-loader"],
                     // css中的基础路径
-                    publicPath: "../"
+                    publicPath: "../"//解决css背景图的路径问题
                 })
             },
             // 处理 scss 文件的 loader
@@ -79,7 +79,7 @@ module.exports = {
                     fallback: "style-loader",
                     use: ["css-loader", "sass-loader"],
                     // css中的基础路径
-                    publicPath: "../"
+                    publicPath: "../"//解决css背景图的路径问题
                 })
             },
             // 处理 less 文件的 loader
@@ -91,9 +91,10 @@ module.exports = {
                     fallback: "style-loader",
                     use: ["css-loader", "less-loader"],
                     // css中的基础路径
-                    publicPath: "../"
+                    publicPath: "../"//解决css背景图的路径问题
                 })
             },
+
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
@@ -128,7 +129,8 @@ module.exports = {
             // Default: false - remove files
             dry: false,
         }),
-        new ExtractTextPlugin("css/style.[hash:8].min.css"),/*所有样式打包在style.css文件内*/
+        /*所有样式打包在style.css文件内*/
+        new ExtractTextPlugin("css/style.[hash:8].min.css"),
         /*new ExtractTextPlugin("css/[name].css"),*/
         /*new ExtractTextPlugin({
             //filename: 'css/[name].[hash:8].min.css',
@@ -137,16 +139,16 @@ module.exports = {
         //压缩css
         new OptimizeCSSAssetsPlugin({
             assetNameRegExp: /\.css$/g,
-            cssProcessor: require('cssnano'), //npm install --save-dev cssnano
+            cssProcessor: require('cssnano'), //cssProcessor 处理器：默认就是cssnano 安装npm install --save-dev cssnano
             cssProcessorPluginOptions: {
-                preset: ['default', { discardComments: { removeAll: true } }],
+                preset: ['default', { discardComments: { removeAll: true } }], //discardComments:对注释的处理
             },
-            canPrint: true
+            canPrint: true //是否打印处理过程中的日志
         }),
         //压缩js
         new UglifyJsPlugin({
             test: /\.js(\?.*)?$/i,//默认匹配写法
-            exclude: /\node_modules/,//排除
+            //exclude: /\/src\/assets\/js/,//排除  Type: String|RegExp|Array<String|RegExp> Default: undefined
             sourceMap: true,
         }),
         //复制静态资源

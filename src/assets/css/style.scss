@@ -5,6 +5,9 @@
 .home-page{
     min-height: 100%;
     background-color: rgb(255, 106, 106);
+    transform: translate(0px);
+    transition: all 0.3s;
+    display: flex;
 }
 /* 首页 end */
 
@@ -17,5 +20,8 @@
     min-height: 100%;
     background-color: rgb(62, 162, 255);
     color: #000;
+    transform: translate(0px);
+    transition: all 0.3s;
+    display: flex;
 }
 /* 注册 end */
