@@ -1,26 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				font-style: normal;
+				color: #333;
+				box-sizing: border-box;
+			}
+			html{
+				background-color: #fff;
+			}
+			a:active,a:hover {
+				outline: 0;
+			}
+			a,a:visited {
+				text-decoration: none;
+			}
+			.all-page{
+				width: 100%;
+				max-width: 1000px;
+				margin:0 auto;
+				padding: 5px 10px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			.all-page a{
+				width: 50%;
+				width: calc(50% - 5px);
+			    padding: 12px 20px;
+			    margin: 5px 0px;
+				cursor: pointer;
+				color: #fff;
+			    font-weight: 500;
+			    font-size: 14px;
+			    border-radius: 4px;
+    			border-color: #409eff;
+				background-color: #409eff;
+			    transition: .1s;
+    			-webkit-appearance: none;
+			    -moz-user-select: none;
+			    -webkit-user-select: none;
+			    -ms-user-select: none;
+			    
+			}
+			.all-page a:hover{
+				background: #66b1ff;
+			    border-color: #66b1ff;
+			    color: #fff;
+			}
+			@media screen and (min-width:0px) and (max-width:640px){
+				.all-page a{
+					width: 100%;
+					font-size: 14px;
+					font-weight: 500;
+				}
+			}
+		</style>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="icon" href="../img/favicon.ico" type="image/ico">
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="all-page">
-        <!--全部页面-->
-        <a href="html/index.html">index</a>
-        <a href="html/login.html">login</a>
-    </div>
-</body>
+	<body>
+		<div class="all-page">
+			<!--全部页面-->
+	        <a href="html/index.html">index</a>
+	        <a href="html/login.html">login</a>
+		</div>
+	</body>
 
 </html>
