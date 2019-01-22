@@ -1,5 +1,7 @@
 ﻿webpac配置多个服务器地址：局域网/本地地址
 
+配置代理服务器，配置 process.env.NODE_ENV === 'production'   ；config.url = config.url.replace(/\/api/g, ""); //生产环境
+
 
 引用的图片路径必须是../img/1.png  
 
